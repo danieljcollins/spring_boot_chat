@@ -1,0 +1,47 @@
+Chat-server app plans
+
+Immediate to-do:
+
+- make user names in the user list of the view clickable, which will go to their profile pages (when profile pages are implemented)
+
+(Partial - adding authorization after inviting to a room working, but no notification system in place to let user know they've been invited) - implement invitations to rooms, implement notifications to users when they have been invited to a room
+
+
+Initial Stage:
+
+(Completed) - Most features of a "1.0" version up and running (new user registration, chat room creation, message creation
+
+Features to implement:
+
+(Completed) - administrator controls (CRUD users, messages, etc from a web view)
+(Completed) - made chat rooms public OR private(invite only)
+(Completed) - and implement controls to manage users who are allowed into the chat room. The chat room creator (and an admin) will be able to access these controls.
+(Completed) - user search function
+- private messages between users (look up users using a search function AND/OR make all user names clickable and that opens the private message screen.
+- logging of events, make admin pages which allow admins to view logs
+- more tests
+(Completed)- fix user registration bugs (blank user name bug, no password bug) - possibly change to a button which calls JS functions, then sends the form if it passes through the JS functions (testing user input)
+
+- change chat-window.jsp and controller to utilize the observer design pattern to get messages,
+instead of polling using AJAX requests from chat-window.jsp
+
+- make user profile screen; make usernames clickable in chat window, which takes user to user profile screen where they can direct message them or view their profile
+
+- allow users to set the text colour of their name, and let other users see that colour on their screen.
+
+- additionally, let users set a visual theme that displays all text colour in one colour (either a default colour or a user selectable colour/theme
+
+Refactoring:
+
+(Completed) - use the @PathVariable to do away with the necessity to use the PostStringFormatter class etc.
+
+Potentially un-needed refactoring:
+
+(Completed) - Currently the messages table is not normalized; it contains the user name that submitted the message in every field. In order to rectify this, I would need to alter the ChatController.java HTTP end-point to call the ChatMessage and ChatUser repositories, (one or the other, or both) and create a JOIN between the two tables which would link user_id from messages to user_id in the user table. Then take the result set of all the messages with the user name attached and create an ArrayList in the ChatController and send it to the view.
+
+(Completed) - Add a ChatController http endpoint that pulls the user names from the chatRoom messages (perhaps iterates over the messages and pulls the unique names and adds them to a map) then sends them to the view to be viewed in the user list portion of the view
+	- When building the ArrayList of ChatMessage(s), I added the ChatUser's usernames to an ArrayList.
+
+Future plans:
+
+- create React/Angular front-end, preferably angular as it's more likely to be used in enterprise applications (apparently).

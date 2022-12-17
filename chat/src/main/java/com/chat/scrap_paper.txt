@@ -1,0 +1,84 @@
+scrap paper document (random code snippets that I may need later)
+/*
+					<c:forEach items="${chatMessageArray}" var="chatMessageArray">
+						<tr>
+							<td>${chatMessageArray.getUsername()}</td>
+							<td>${chatMessageArray.getMessage()}</td>
+						</tr>
+					</c:forEach>
+				*/	
+				
+//<script src="/js/chat.js"></script>
+
+
+<form method="POST" id="createNewMesssage" action="chat-submit" modelAttribute="username" modelAttribute="message" modelAttribute="chatRoomId">
+	<input type="hidden" id="username" name="username" value="${currentUsername}">
+	Chat: <input type="text" name="message" id="message">
+	<input type="hidden" id="chatRoomId" name="chatRoomId" value="${chatRoomId}">
+	<input type="submit" id="submit" value="Submit"/>
+	<button type="button" id="autoScrollButton" value="autoScrollButton" onclick="enableAutoScrollingText()">Enable Auto-Scrolling Text</button>
+</form>
+
+--chat_room_type_id int,
+--CONSTRAINT chat_room_type_fk FOREIGN KEY(chat_room_type_id) REFERENCES chat_room_type(chat_room_type_id),
+
+// old form post for chat-window.jsp
+
+<!-- //<form method="POST" id="createNewMesssage" action="chat-submit" modelAttribute="username" modelAttribute="message" modelAttribute="chatRoomId"> --!>
+<!-- //<input type="submit" id="submit" value="Submit"/> --!>
+
+32 mins into decorate design pattern yt video
+18 mins factory pattern yt video
+
+
+/*
+					const myObj = JSON.parse(this.responseText);
+					let text = "<table border='1'>"
+					for (let x in myObj) {
+						text += "<tr><td>" + myObj[x].getChatUsername() + "</td><td>" + myObj[x].message + "</td></tr>";
+					}
+					text += "</table>"    
+					document.getElementById("chatWindowTable").innerHTML = text;
+					*/
+					
+					//myObj[x].getChatUsername()
+					
+old messages table declaration:
+
+CREATE table messages(
+	message_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	chat_room_id int NOT NULL,
+	CONSTRAINT chat_room_id_fk FOREIGN KEY(chat_room_id) REFERENCES chat_rooms(chat_room_id),
+	user_name varchar(25) NOT NULL,
+	user_id int,
+	CONSTRAINT fk_messages_users_user_id FOREIGN KEY(user_id) REFERENCES users(user_id),
+	message varchar(300) NOT NULL
+);
+
+// old sendMessages in chat-window.jsp that sent the username with the message
+function sendMessage(){
+	var message = document.getElementById("message").value;
+	
+	const xmlhttp = new XMLHttpRequest();
+	
+	var postContent = "/chat-submit?username=${currentUsername}&message=" + message + "&chatRoomId=${chatRoomId}" + "&chatUserId=${chatUserId}";
+	
+	xmlhttp.open("POST", postContent);
+	xmlhttp.send();
+	
+	document.getElementById("message").value = "";
+	document.getElementById("message").focus();
+}
+
+Logging ideas
+
+examples:
+
+user_name has logged in (date/time)
+user_name has logged out (date/time)
+user_name has created chat_room (chat_room_id) at (date/time)
+user_name has created message (message_id) at (date/time)
+user_name has been registered as a new user (date/time)
+A failed sign-in attempt has been made for user_name at (date/time) (at ip address if possible)
+administrator (admin_name) has deleted chat_room (chat_room_id) at (date/time)
+administrator (admin_name) has deleted chat_message (chat_message_id) at (date/time)

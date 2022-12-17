@@ -1,0 +1,241 @@
+:root{
+	background-color: #36393F;
+	color: white;
+}
+
+.error{
+	color: red;
+}
+
+/* header styles */
+.header{
+	width: 100%;
+	background-color: #5e636e;
+	color: white;
+	border-radius: 50px;
+}
+
+.header a:link, a:visited{
+	color: #D2C6B0;
+}
+
+.header ul{
+	padding: 20px;
+}
+
+.header li{
+	display: inline;
+	padding: 20px;
+}
+
+.header li:hover{
+	background-color: #9196a1;
+}
+
+td, tr{
+	color: #eeeeee;	
+}
+
+a:link, a:visited{
+	color: #D2C6B0;
+}
+
+a:link:hover{
+	background-color: #9196a1;
+}
+
+/* home page styles */
+.section1{
+	clear: both;
+	color: white;
+	background-color: #40444B;
+	padding: 40px;
+}
+
+.section2{
+	clear: both;
+	color: white;
+	background-color: #36393F;
+	padding: 40px;
+}
+
+.section3{
+	clear: both;
+	color: white;
+	background-color: #40444B;
+	padding: 40px;
+}
+
+.section4{
+	clear: both;
+	color: white;
+	background-color: #36393F;
+	padding: 40px;
+}
+
+#registerButton, #loginButton{
+	text-decoration: none;
+	padding: 30px;
+	font-size: 1.5em;
+	color: white;
+	background-color: darkslateblue;
+	border-radius: 50px;
+	display: inline-block;
+}
+
+#registerButton:hover, #loginButton:hover{
+	background-color: orange;
+}
+
+/* login page styles */
+.loginForm{
+	padding: 20px;
+	border-radius: 50px;
+	background-color: #5e636e;
+}
+
+.loginForm input{
+	margin: 10px;
+	padding: 10px;
+}
+
+.loginForm input:focus{
+	border-style: solid;
+	border-color: orange;
+}
+
+/* chat browser styles */
+/*
+.chatRoomListTable tr, td{
+	padding: 20px;
+}
+*/
+.chatRoomList a{	
+	text-decoration: none;
+}
+
+.chatRoomList a:hover{
+	color:black;
+}
+
+.chatRoomToolsArea{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	/* margin: 30px 30px 30px 30px; */
+	width: 100%;	
+	background-color: #40444B;	
+}
+
+.chatRoomToolsControls{
+	background-color: #40444B;
+	margin: 30px;
+	font: 15px sans-serif;
+	color: #D2C6B0;	
+	border: none;
+	outline: none;
+}
+
+/* chat window styles */
+
+.chatContainer{
+	position: relative;
+	background-color: #36393F;
+}
+
+.chatWindow{
+	display: block;
+	/* float: left; */
+	margin-bottom: 140px;
+	background-color: #36393F;
+	color: #D2C6B0;
+	text-align: left;
+	
+}
+
+.chatWindowBottom{
+
+}
+
+/* auto-scroll and scroll to bottom controls */
+.chatWindowToolsArea{
+	position: fixed;
+	right: 0px;
+	bottom: 75px;
+}
+
+.messageInputArea{
+	position: fixed;
+	left: 0;
+	bottom: 0;	
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #40444B;
+}
+
+#messageTextArea{
+	width: 100%;
+	height: 100%;
+	
+	background-color: #40444B;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
+	font: 15px sans-serif;
+	color: #D2C6B0;	
+	border: none;
+	outline: none;
+}
+
+#messageTextArea:focus{
+	border-color: orange;
+	border-style: solid;
+}
+
+/* user search controls */
+.userSearchControls{
+	display: none;
+	margin-top: 15px;
+}
+.userSearchResults{
+	display:none;
+}
+
+#hideSearchResultsButton{
+	display: none;
+}
+
+/* User list elements in the chat window */
+.userListWindow{
+	position: fixed;
+	float: left;
+	width: 20%;
+	height: 80%;
+	background-color: #40444B;
+	color: #4DC96C;
+}
+
+.userListWindow h3{
+	margin: 20px;
+}
+
+.userList{
+	display: none;
+	float: left;
+	display: none;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#hideUserListButton{
+	display: none;
+}
+
+#userListTable{
+	border: 1px solid;
+}
